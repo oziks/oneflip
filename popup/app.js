@@ -16,12 +16,10 @@ async function init() {
 
 function render() {
   const groupsEl = document.getElementById('groups');
-  const ungroupedEl = document.getElementById('ungrouped');
-  const ungroupedCount = document.getElementById('ungrouped-count');
   const ungroupedSection = document.getElementById('ungrouped-section');
 
   groupsEl.innerHTML = '';
-  ungroupedEl.innerHTML = '';
+  ungroupedSection.innerHTML = '';
 
   const groupedIds = new Set(groups.flatMap(g => g.extensionIds));
 
@@ -49,23 +47,34 @@ function render() {
   const ungroupedExts = extensions
     .filter(e => !groupedIds.has(e.id))
     .sort((a, b) => a.name.localeCompare(b.name));
-  ungroupedCount.textContent = `(${ungroupedExts.length})`;
-  ungroupedSection.style.display = ungroupedExts.length > 0 ? '' : 'none';
 
-  for (const ext of ungroupedExts) {
-    ungroupedEl.appendChild(renderExtRow(ext, null));
+  if (ungroupedExts.length > 0) {
+    const section = document.createElement('details');
+    section.className = 'group';
+    section.innerHTML = `
+      <summary class="group-header">
+        <span class="group-dot" style="background: #a8a8c0"></span>
+        <span class="group-name">Ungrouped</span>
+        <span class="group-mode">${ungroupedExts.length}</span>
+      </summary>
+    `;
+    for (const ext of ungroupedExts) {
+      section.appendChild(renderExtRow(ext, null));
+    }
+    ungroupedSection.appendChild(section);
   }
 }
 
 function renderGroup(group, exts) {
-  const section = document.createElement('div');
+  const section = document.createElement('details');
   section.className = 'group';
+  section.open = true;
   section.innerHTML = `
-    <div class="group-header">
+    <summary class="group-header">
       <span class="group-dot" style="background: ${group.color}"></span>
       <span class="group-name">${escapeHtml(group.name)}</span>
       <span class="group-mode">${group.mode === 'radio' ? 'one at a time' : 'independent'}</span>
-    </div>
+    </summary>
   `;
 
   for (const ext of exts) {
