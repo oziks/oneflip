@@ -1,8 +1,16 @@
-# OneFlip
+<p align="center">
+  <img src="assets/icon-128.png" width="80" alt="OneFlip icon">
+</p>
 
-> One at a time, always the right one.
+<h1 align="center">OneFlip</h1>
 
-Chrome extension to manage your browser extensions with groups and one-click toggling.
+<p align="center"><em>One at a time, always the right one.</em></p>
+
+<p align="center">Chrome extension to manage your browser extensions with groups and one-click toggling.</p>
+
+<p align="center">
+  <img src="assets/screenshot.png" width="420" alt="OneFlip popup screenshot">
+</p>
 
 ## Features
 
