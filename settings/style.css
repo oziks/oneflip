@@ -15,33 +15,52 @@ body {
 .container {
   max-width: 720px;
   margin: 0 auto;
-  padding: 32px 24px;
+  padding: 0 24px 32px;
 }
 
 /* Header */
 header {
-  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  margin: 0 -24px 24px;
+  background: #f2f0f7;
+  border-bottom: 1px solid #e6e3ef;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
-header h1 {
-  font-size: 24px;
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-brand img {
+  border-radius: 4px;
+}
+
+.header-brand span {
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: -0.5px;
-  color: #3d3d5c;
+  letter-spacing: -0.3px;
+  color: #2E2ECC;
 }
 
 .subtitle {
-  color: #8b8ba8;
-  margin-top: 4px;
+  color: #a8a8c0;
+  font-size: 13px;
 }
 
 /* Cards */
 .card {
   background: #fff;
   border: 1px solid #e6e3ef;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
 }
 
 h2 {
@@ -103,8 +122,8 @@ input[type="text"]::placeholder {
 input[type="text"]:focus,
 select:focus {
   outline: none;
-  border-color: #8585f2;
-  box-shadow: 0 0 0 3px rgba(133, 133, 242, 0.12);
+  border-color: #2E2ECC;
+  box-shadow: 0 0 0 3px rgba(46, 46, 204, 0.1);
 }
 
 input[type="color"] {
@@ -130,12 +149,12 @@ input[type="color"] {
 }
 
 .btn.primary {
-  background: #8585f2;
+  background: #2E2ECC;
   color: #fff;
 }
 
 .btn.primary:hover {
-  background: #7575d8;
+  background: #2424a6;
 }
 
 .btn.danger {
@@ -169,7 +188,7 @@ input[type="color"] {
 .group-card {
   background: #fff;
   border: 1px solid #e6e3ef;
-  border-radius: 12px;
+  border-radius: 10px;
   margin-bottom: 12px;
   overflow: hidden;
 }
@@ -177,28 +196,33 @@ input[type="color"] {
 .group-card-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 16px;
+  gap: 8px;
+  padding: 10px 12px;
   border-bottom: 1px solid #eeedf4;
 }
 
 .group-card-dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .group-card-name {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   flex: 1;
-  color: #3d3d5c;
+  color: #8b8ba8;
 }
 
 .group-card-meta {
-  font-size: 12px;
+  font-size: 10px;
   color: #a8a8c0;
+  background: #f2f0f7;
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 .group-card-actions {
@@ -315,7 +339,7 @@ input[type="color"] {
 
 /* Drop target on group cards */
 .group-card.drop-target {
-  outline: 2px solid #8585f2;
+  outline: 2px solid #2E2ECC;
   outline-offset: -2px;
   background: #f0eef7;
 }
