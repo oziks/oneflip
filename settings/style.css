@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  color: #3d3d5c;
+  background: #f2f0f7;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* Header */
+header {
+  margin-bottom: 28px;
+}
+
+header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #3d3d5c;
+}
+
+.subtitle {
+  color: #8b8ba8;
+  margin-top: 4px;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border: 1px solid #e6e3ef;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: -0.2px;
+  color: #3d3d5c;
+}
+
+/* Form */
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.field {
+  flex: 1;
+  min-width: 150px;
+}
+
+.field.small {
+  flex: 0 0 70px;
+  min-width: 70px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b6b8a;
+  margin-bottom: 4px;
+}
+
+.hint {
+  font-weight: 400;
+  color: #a8a8c0;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #dddae6;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  background: #fff;
+  color: #3d3d5c;
+  transition: border-color 0.15s;
+}
+
+input[type="text"]::placeholder {
+  color: #c0c0d0;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #8585f2;
+  box-shadow: 0 0 0 3px rgba(133, 133, 242, 0.12);
+}
+
+input[type="color"] {
+  width: 100%;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid #dddae6;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #fff;
+}
+
+/* Buttons */
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn.primary {
+  background: #8585f2;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #7575d8;
+}
+
+.btn.danger {
+  background: #fce4e4;
+  color: #d05050;
+}
+
+.btn.danger:hover {
+  background: #f8d0d0;
+}
+
+.btn.danger.confirming {
+  background: #d05050;
+  color: #fff;
+  font-size: 11px;
+  padding: 4px 10px;
+}
+
+.btn.ghost {
+  background: none;
+  color: #8b8ba8;
+  padding: 4px 8px;
+}
+
+.btn.ghost:hover {
+  color: #3d3d5c;
+  background: #f2f0f7;
+}
+
+/* Group card */
+.group-card {
+  background: #fff;
+  border: 1px solid #e6e3ef;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.group-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #eeedf4;
+}
+
+.group-card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.group-card-name {
+  font-weight: 600;
+  font-size: 15px;
+  flex: 1;
+  color: #3d3d5c;
+}
+
+.group-card-meta {
+  font-size: 12px;
+  color: #a8a8c0;
+}
+
+.group-card-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.group-card-body {
+  padding: 12px 16px;
+}
+
+.group-card-body .ext-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: #f2f0f7;
+  border-radius: 6px;
+  font-size: 12px;
+  margin: 3px;
+  color: #5c5c78;
+}
+
+.ext-chip img {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+
+.ext-chip .remove-ext {
+  cursor: pointer;
+  color: #b0b0c8;
+  font-size: 14px;
+  line-height: 1;
+  margin-left: 2px;
+}
+
+.ext-chip .remove-ext:hover {
+  color: #d05050;
+}
+
+.group-card-empty {
+  color: #b0b0c8;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* Edit form inline */
+.group-edit {
+  padding: 12px 16px;
+  border-top: 1px solid #eeedf4;
+  display: none;
+}
+
+.group-edit.open {
+  display: block;
+}
+
+.group-edit .form-row {
+  margin-bottom: 10px;
+}
+
+/* Extension list in settings */
+.ext-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0eef5;
+  transition: background 0.12s;
+}
+
+.ext-list-item:last-child {
+  border-bottom: none;
+}
+
+.ext-list-item:hover {
+  background: #f8f7fb;
+}
+
+.ext-list-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.ext-list-icon img {
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
+}
+
+.ext-list-name {
+  flex: 1;
+  font-weight: 500;
+  font-size: 13px;
+  color: #3d3d5c;
+}
+
+.ext-list-type {
+  font-size: 11px;
+  color: #a8a8c0;
+}
+
+.ext-list-assign {
+  width: 150px;
+}
+
+.ext-list-assign select {
+  padding: 4px 6px;
+  font-size: 12px;
+}
+
+/* Drop target on group cards */
+.group-card.drop-target {
+  outline: 2px solid #8585f2;
+  outline-offset: -2px;
+  background: #f0eef7;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #5c5ca0;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.25s;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}

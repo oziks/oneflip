@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OneFlip — Settings</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>OneFlip</h1>
+      <p class="subtitle">One at a time, always the right one.</p>
+    </header>
+
+    <!-- Create Group -->
+    <section class="card" id="create-section">
+      <h2>Create Group</h2>
+      <form id="create-form">
+        <div class="form-row">
+          <div class="field">
+            <label for="group-name">Name</label>
+            <input type="text" id="group-name" placeholder="e.g. Lemlist" required>
+          </div>
+          <div class="field">
+            <label for="group-pattern">Auto-match pattern <span class="hint">(regex)</span></label>
+            <input type="text" id="group-pattern" placeholder="e.g. lemlist|lempire">
+          </div>
+          <div class="field small">
+            <label for="group-color">Color</label>
+            <input type="color" id="group-color" value="#6366f1">
+          </div>
+          <div class="field">
+            <label for="group-mode">Mode</label>
+            <select id="group-mode">
+              <option value="radio">Radio (one at a time)</option>
+              <option value="free">Free (independent)</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn primary">Create Group</button>
+      </form>
+    </section>
+
+    <!-- Groups -->
+    <section id="groups-section">
+      <h2>Groups</h2>
+      <div id="groups-list"></div>
+    </section>
+
+    <!-- All Extensions -->
+    <section class="card" id="extensions-section">
+      <h2>All Extensions</h2>
+      <p class="hint">Drag extensions into groups, or use the dropdown to assign them.</p>
+      <div id="extensions-list"></div>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
